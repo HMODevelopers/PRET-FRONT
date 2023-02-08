@@ -14,8 +14,8 @@ import { User } from '../models/user';
 const users: User[] = [
   {
     id: 1,
-    username: 'admin@lorax.com',
-    password: 'admin',
+    CorreoElectronico: 'admin@lorax.com',
+    Contrasena: 'admin',
     firstName: 'Sarah',
     lastName: 'Smith',
     token: 'admin-token'
@@ -47,14 +47,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     function authenticate() {
       const { username, password } = body;
       const user = users.find(
-        (x) => x.username === username && x.password === password
+        (x) => x.CorreoElectronico === username && x.Contrasena === password
       );
       if (!user) {
         return error('Username or password is incorrect');
       }
       return ok({
         id: user.id,
-        username: user.username,
+        username: user.Contrasena,
         firstName: user.firstName,
         lastName: user.lastName,
         token: user.token
