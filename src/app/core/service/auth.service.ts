@@ -23,11 +23,11 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
+  login(CorreoElectronico: string, Contrasena: string) {
     return this.http
-      .post<any>(`${environment.apiUrl}/authenticate`, {
-        username,
-        password
+      .post<any>(`${environment.apiUrl}/api/Auth`, {
+        CorreoElectronico,
+        Contrasena
       })
       .pipe(
         map((user) => {

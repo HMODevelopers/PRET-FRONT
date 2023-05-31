@@ -52,6 +52,7 @@ export class HeaderComponent
     { text: 'Spanish', flag: 'assets/images/flags/spain.jpg', lang: 'es' },
     { text: 'German', flag: 'assets/images/flags/germany.jpg', lang: 'de' }
   ];
+
   notifications: any[] = [
     {
       message: 'Please check your mail',
@@ -117,8 +118,8 @@ export class HeaderComponent
     // }
   }
   ngOnInit() {
-    this.config = this.configService.configData;
 
+    this.config = this.configService.configData;
     this.langStoreValue = localStorage.getItem('lang');
     const val = this.listLang.filter((x) => x.lang === this.langStoreValue);
     this.countryName = val.map((element) => element.text);
@@ -130,6 +131,7 @@ export class HeaderComponent
       this.flagvalue = val.map((element) => element.flag);
     }
   }
+
   ngAfterViewInit() {
     // set theme on startup
     if (localStorage.getItem('theme')) {
@@ -206,12 +208,14 @@ export class HeaderComponent
       }
     }
   }
+
   setLanguage(text: string, lang: string, flag: string) {
     this.countryName = text;
     this.flagvalue = flag;
     this.langStoreValue = lang;
     this.languageService.setLanguage(lang);
   }
+
   mobileMenuSidebarOpen(event: any, className: string) {
     const hasClass = event.target.classList.contains(className);
     if (hasClass) {
@@ -220,6 +224,7 @@ export class HeaderComponent
       this.renderer.addClass(this.document.body, className);
     }
   }
+
   callSidemenuCollapse() {
     const hasClass = this.document.body.classList.contains('side-closed');
     if (hasClass) {
@@ -230,6 +235,7 @@ export class HeaderComponent
       this.renderer.addClass(this.document.body, 'submenu-closed');
     }
   }
+  
   logout() {
     this.subs.sink = this.authService.logout().subscribe((res) => {
       if (!res.success) {

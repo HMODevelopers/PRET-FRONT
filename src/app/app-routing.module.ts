@@ -14,8 +14,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/authentication/signin', pathMatch: 'full' },
       {
         path: 'dashboard',
-        loadChildren: () =>
-          import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
+        loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
       {
         path: 'extra-pages',

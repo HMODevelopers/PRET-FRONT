@@ -1,18 +1,18 @@
 import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
-  {
+  /*{
     path: '',
     title: 'MENUITEMS.MAIN.TEXT',
     icon: '',
     class: '',
     groupTitle: true,
     submenu: []
-  },
+  },*/
   {
     path: '',
     title: 'MENUITEMS.HOME.TEXT',
-    icon: 'monitor',
+    icon: 'home',
     class: 'menu-toggle',
     groupTitle: false,
     submenu: [
@@ -23,7 +23,7 @@ export const ROUTES: RouteInfo[] = [
         class: 'ml-menu',
         groupTitle: false,
         submenu: []
-      },
+      }/*,
       {
         path: 'dashboard/dashboard2',
         title: 'MENUITEMS.HOME.LIST.DASHBOARD2',
@@ -39,7 +39,7 @@ export const ROUTES: RouteInfo[] = [
         class: 'ml-menu',
         groupTitle: false,
         submenu: []
-      }
+      }*/
     ]
   },
   {
@@ -116,63 +116,5 @@ export const ROUTES: RouteInfo[] = [
       }
     ]
   },
-  {
-    path: '',
-    title: 'Multi level Menu',
-    icon: 'chevrons-down',
-    class: 'menu-toggle',
-    groupTitle: false,
-    submenu: [
-      {
-        path: '/multilevel/first1',
-        title: 'First',
-        icon: '',
-        class: 'ml-menu',
-        groupTitle: false,
-        submenu: []
-      },
-      {
-        path: '/',
-        title: 'Second',
-        icon: '',
-        class: 'ml-sub-menu',
-        groupTitle: false,
-        submenu: [
-          {
-            path: '/multilevel/secondlevel/second1',
-            title: 'Second 1',
-            icon: '',
-            class: 'ml-menu2',
-            groupTitle: false,
-            submenu: []
-          },
-          {
-            path: '/',
-            title: 'Second 2',
-            icon: '',
-            class: 'ml-sub-menu2',
-            groupTitle: false,
-            submenu: [
-              {
-                path: '/multilevel/thirdlevel/third1',
-                title: 'third 1',
-                icon: '',
-                class: 'ml-menu3',
-                groupTitle: false,
-                submenu: []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        path: '/multilevel/first3',
-        title: 'Third',
-        icon: '',
-        class: 'ml-menu',
-        groupTitle: false,
-        submenu: []
-      }
-    ]
-  }
+ 
 ];

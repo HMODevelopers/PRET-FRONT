@@ -26,6 +26,9 @@ import {
 import { WINDOW_PROVIDERS } from './core/service/window.service';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+import { HomeComponent } from './Pages/home/home.component';
+import { UsuariosComponent } from './Pages/usuarios/usuarios.component';
+
 
 export function createTranslateLoader(http: HttpClient): any {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -39,7 +42,9 @@ export function createTranslateLoader(http: HttpClient): any {
     SidebarComponent,
     RightSidebarComponent,
     AuthLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    HomeComponent,
+    UsuariosComponent
   ],
   imports: [
     BrowserModule,
