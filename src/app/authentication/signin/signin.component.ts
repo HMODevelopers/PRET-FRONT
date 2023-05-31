@@ -25,16 +25,15 @@ export class SigninComponent
   }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: [
-        'admin@lorax.com',
-        [Validators.required, Validators.email, Validators.minLength(5)]
-      ],
+      email: ['admin@lorax.com', [Validators.required, Validators.email, Validators.minLength(5)]],
       password: ['admin', Validators.required]
     });
   }
+
   get f() {
     return this.loginForm.controls;
   }
+  
   onSubmit() {
     this.submitted = true;
     this.error = '';
@@ -42,6 +41,7 @@ export class SigninComponent
       this.error = 'Username and Password not valid !';
       return;
     } else {
+
       this.subs.sink = this.authService
         .login(this.f.email.value, this.f.password.value)
         .subscribe(
@@ -51,6 +51,7 @@ export class SigninComponent
               if (token) {
                 this.router.navigate(['/dashboard/main']);
               }
+              
             } else {
               this.error = 'Invalid Login';
             }
