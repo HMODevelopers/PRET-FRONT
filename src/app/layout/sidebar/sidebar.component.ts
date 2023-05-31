@@ -67,9 +67,9 @@ export class SidebarComponent
       }
     }
   }
-  ngOnInit() {
-    if (this.authService.currentUserValue) {
-      this.sidebarItems = ROUTES.filter((sidebarItem) => sidebarItem);
+    ngOnInit() {
+       if (this.authService.currentUserValue) {
+           this.sidebarItems = ROUTES.filter((sidebarItem) => sidebarItem);
     }
 
     this.initLeftSidebar();
@@ -78,12 +78,14 @@ export class SidebarComponent
   ngOnDestroy() {
     this.routerObj.unsubscribe();
   }
+
   initLeftSidebar() {
     const _this = this;
     // Set menu height
     _this.setMenuHeight();
     _this.checkStatuForResize(true);
   }
+  
   setMenuHeight() {
     this.innerHeight = window.innerHeight;
     const height = this.innerHeight - this.headerHeight;
